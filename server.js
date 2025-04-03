@@ -7,28 +7,31 @@ app.get('/',() => res.end("Home Page"))
 app.get('/about-us',() => res.end("About Us Page")) // now pass app into below function than can`t write that function
 
 
-const server = http.createServer(function (req, res) {
-    console.log("Incoming req.");
-    
-    switch (req.method) {
-        case 'GET':
-            {
-                if(req.url === '/') return res.end("Home Page");
-                if(req.url === '/about-us') return res.end("About us Page");
-            }
-            break;
-            case 'POST':
-                {
-                    if(req.url === '/register') return res.end("Register Page");
-                    if(req.url === '/login') return res.end("Login Page");
-                }
-                break;
+// const server = http.createServer(function (req, res) { //handlerFunction
+//     console.log("Incoming req.");
+//     //Middleware
+//     switch (req.method) {
+//         case 'GET':
+//             {
+//                 if(req.url === '/') return res.end("Home Page");
+//                 if(req.url === '/about-us') return res.end("About us Page");
+//             }
+//             break;
+//             case 'POST':
+//                 {
+//                     if(req.url === '/register') return res.end("Register Page");
+//                     if(req.url === '/login') return res.end("Login Page");
+//                 }
+//                 break;
         
-    }
-    res.end("Res comming.")
-});
+//     }
+//     res.end("Res comming.")
+// });
 
-server.listen(8080, () => {
+// server.listen(8080, () => {
+//     console.log("Server Started");
+// })
+app.listen(8080, () => {
     console.log("Server Started");
 })
 
@@ -53,3 +56,9 @@ server.listen(8080, () => {
 //     }
 //     res.end("Res comming.")
 // }
+
+// Express is warrper on above code which is help for routeing.
+// E.x 
+// koa made by express
+// hona
+//fastify
